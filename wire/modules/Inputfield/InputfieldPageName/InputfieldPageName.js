@@ -1,10 +1,24 @@
-
 var InputfieldPageName = {
 	sanitize: function(name) {
 
 		// replace leading and trailing whitespace 
 		name = jQuery.trim(name);
 		name = name.toLowerCase();  
+		
+		// replace azerbaijani symbols
+		name = name.replace('\u0131', 'i');
+		name = name.replace('\u0130', 'i');
+		name = name.replace('\u018f', 'e');
+		name = name.replace('\u0259', 'e');
+		name = name.replace('\u015e', 'sh');
+		name = name.replace('\u015f', 'sh');
+		name = name.replace('\u00c7', 'ch');
+		name = name.replace('\u00e7', 'ch');
+		name = name.replace('\u011f', 'g');
+		name = name.replace('\u00d6', 'o');
+		name = name.replace('\u00f6', 'o');
+		name = name.replace('\u00dc', 'u');
+		name = name.replace('\u00fc', 'u');
 
 		var srch;
 		for(srch in config.InputfieldPageName.replacements) {
